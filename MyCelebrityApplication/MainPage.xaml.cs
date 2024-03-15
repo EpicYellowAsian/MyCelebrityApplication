@@ -2,7 +2,7 @@
 
 namespace MyCelebrityApplication
 {
-    // Jag har inte använt mig av singleton i min uppgift då jag inte har någon inloggningsfunktion och därav har jag inte behövt använda mig av singleton. 
+    // Jag har inte använt mig av singleton i min uppgift då jag inte haft något behov av det.
     
     public partial class MainPage : ContentPage
     {

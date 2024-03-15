@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyCelebrityApplication
 {
+    // Funkade inte riktigt men den kan vara kvar
     public class NetWorthConverter
     {
         public static string Convert(long netWorth)
