@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyCelebrityApplication.SearchResult"
+             Title="SearchResult">
+
+    <ScrollView> 
+    <VerticalStackLayout>
+
+            <Label 
+            Grid.Column="1"
+            Text="INFORMATION ABOUT YOUR CELEBRITY" 
+            FontSize="32"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+            <ListView
+            ItemsSource="{Binding}">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid
+                                Padding="10"
+                                RowDefinitions="*, *, *, *, *, *, *, *" 
+                                ColumnDefinitions="800, *"
+                                ColumnSpacing="20">
+
+                                <Label
+            Grid.Row="0"
+            Text="{Binding name, Converter={StaticResource Name}, StringFormat='Name: {0}'}"
+            FontSize="Medium" />
+
+                                <Label
+            Grid.Row="1"
+            Text="{Binding net_worth, Converter={StaticResource NetWorth}, StringFormat='Net worth: who cares, more money than you will ever have'}" 
+            FontSize="Medium" />
+
+                                <Label
+            Grid.Row="2"
+            Text="{Binding gender, Converter={StaticResource Gender}, StringFormat='Gender: {0}'}"
+            FontSize="Medium" />
+
+                                <Label
+            Grid.Row="3"
+            Text="{Binding nationality, Converter={StaticResource Nationality}, StringFormat='Nationality: {0}'}"
+            FontSize="Medium" />
+
+                                <Label
+            Grid.Row="4"
+            Text="{Binding occupation[0], Converter={StaticResource Occupation}, StringFormat='Occupations: {0}'}"
+            FontSize="Medium" /> 
+
+                                <Label
+            Grid.Row="5"
+            Text="{Binding height, Converter={StaticResource Height}, StringFormat='Height: {0} cm'}"
+            FontSize="Medium" />
+
+                                <Label
+            Grid.Row="6"
+            Text="{Binding birthday, Converter={StaticResource Birthday}, StringFormat='Birthday: {0}'}" 
+            FontSize="Medium" />
+
+                                <Button
+                                Grid.Row="7" 
+                                x:Name="backButton"
+                                Text="Back to start"
+                                VerticalOptions="End" 
+                                HorizontalOptions="End"
+                                FontSize="Medium"
+                                BackgroundColor="LightPink"
+                                Clicked="OnBackClicked" /> 
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
